@@ -44,7 +44,6 @@ INDEX VERSION 1.131+C:\Users\usuario.edc\Documents\Ing. soft2\IS2-Clase\.metadat
 2361146589.index
 3851511421.index
 3994095070.index
-1756068628.index
 978342448.index
 60699546.index
 3956245994.index
