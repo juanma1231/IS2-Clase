@@ -1,6 +1,7 @@
 package com.mipresupuesto.personalbudget.dto;
 
 public class YearDTO {
+	
 	private String id;
 	private int year;
 	

@@ -1,11 +1,13 @@
 package com.mipresupuesto.personalbudget.entity;
 
+import java.util.UUID;
+
 public class YearEntity {
-	private String id;
+	
+	private UUID id;
 	private int year;
 	
 	public YearEntity() {
-		setId("");
 		setYear(0);
 	}
 	
@@ -13,19 +15,16 @@ public class YearEntity {
 		return new YearEntity();
 	}
 	
-	public YearEntity(String id, int year) {
+	public YearEntity(UUID id, int year) {
 		this.id = id;
 		this.year = year;
 	}
 	
-	public final String getId() {
-		if(id==null || "".equals(id.trim())) {
-			setId("");
-		}
+	public final UUID getId() {
 		return id;
 	}
 
-	public final void setId(final String id) {
+	public final void setId(final UUID id) {
 		this.id = id;
 	}
 	
