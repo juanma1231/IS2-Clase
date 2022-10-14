@@ -13,6 +13,8 @@ public class BudgetEntity {
 		setPerson(new PersonEntity());
 	}
 	
+	
+	
 	public BudgetEntity(final YearEntity year, final PersonEntity person) {
 		setYear(year);
 		setPerson(person);
@@ -36,4 +38,14 @@ public class BudgetEntity {
 	public final void setPerson(PersonEntity person) {
 		this.person = person;
 	}
+
+	public final UUID getId() {
+		return id;
+	}
+
+	public final void setId(UUID id) {
+		this.id = id;
+	}
+	
+	
 }

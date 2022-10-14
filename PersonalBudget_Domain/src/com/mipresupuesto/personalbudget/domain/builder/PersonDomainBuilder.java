@@ -1,5 +1,6 @@
 package com.mipresupuesto.personalbudget.domain.builder;
 
+import com.mipresupuesto.personalbudget.crosscutting.utils.UtilUUID;
 import com.mipresupuesto.personalbudget.domain.PersonDomain;
 
 import java.util.UUID;
@@ -24,7 +25,7 @@ public class PersonDomainBuilder {
 	}
 	
 	public final PersonDomainBuilder setId(UUID id) {
-		this.id = (id== null) ? UUID.randomUUID() : id;
+		this.id = (id== null) ? UtilUUID.DEFAULT_UUID : id;
 		return this;
 	}
 	

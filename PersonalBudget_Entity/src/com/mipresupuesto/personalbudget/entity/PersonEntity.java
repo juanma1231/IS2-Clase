@@ -2,6 +2,8 @@ package com.mipresupuesto.personalbudget.entity;
 
 import java.util.UUID;
 
+import com.mipresupuesto.personalbudget.crosscutting.utils.UtilUUID;
+
 public class PersonEntity {
 	
 	private UUID id;
@@ -12,6 +14,7 @@ public class PersonEntity {
 	private String secondSurname;
 	
 	public PersonEntity() {
+		setId(UtilUUID.DEFAULT_UUID);
 		setIdCard("");
 		setFirstName("");
 		setMiddleName("");
@@ -35,6 +38,9 @@ public class PersonEntity {
 	}
 	
 	public final UUID getId() {
+		if(id == null) {
+			setId(UtilUUID.DEFAULT_UUID);
+		}
 		return id;
 	}
 	public final void setId(final UUID id) {
