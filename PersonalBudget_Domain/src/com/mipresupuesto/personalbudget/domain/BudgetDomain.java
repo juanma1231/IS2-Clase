@@ -1,7 +1,10 @@
 package com.mipresupuesto.personalbudget.domain;
 
+import java.util.UUID;
+
 public final class BudgetDomain {
 	
+	private UUID id;
 	private YearDomain year;
 	private PersonDomain person;
 	

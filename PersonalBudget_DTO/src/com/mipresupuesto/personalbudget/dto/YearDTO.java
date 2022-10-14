@@ -1,12 +1,13 @@
 package com.mipresupuesto.personalbudget.dto;
 
+import java.util.UUID;
+
 public class YearDTO {
 	
-	private String id;
+	private UUID id;
 	private int year;
 	
 	public YearDTO() {
-		setId("");
 		setYear(0);
 	}
 	
@@ -14,20 +15,16 @@ public class YearDTO {
 		return new YearDTO();
 	}
 	
-	public YearDTO(String id, int year) {
-		this.id = id;
+	public YearDTO(UUID id, int year) {
 		this.year = year;
 	}
 	
-	public final String getId() {
-		if(id==null || "".equals(id.trim())) {
-			setId("");
-		}
+	public final UUID getId() {
 		return id;
 	}
 
-	public final void setId(final String id) {
-		this.id = id;
+	private final void setId(final UUID id) {
+		this.id = (id== null) ? UUID.randomUUID() : id;
 	}
 	
 	public final int getYear() {

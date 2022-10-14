@@ -1,14 +1,16 @@
 package com.mipresupuesto.personalbudget.domain;
 
+import java.util.UUID;
+
 public class PersonDomain {
 
-	private String id;
+	private UUID id;
 	private String idCard;
 	private String firstName;
 	private String middleName;
 	private String lastName;
 	
-	private PersonDomain(String id, String idCard, String firstName, String middleName, String lastName) {
+	private PersonDomain(UUID id, String idCard, String firstName, String middleName, String lastName) {
 		this.id = id;
 		this.idCard = idCard;
 		this.firstName = firstName;
@@ -16,12 +18,12 @@ public class PersonDomain {
 		this.lastName = lastName;
 	}
 	
-	public static PersonDomain create(String id, String idCard, String firstName, String middleName, String lastName) {
+	public static PersonDomain create(UUID id, String idCard, String firstName, String middleName, String lastName) {
 		return new PersonDomain(id, idCard, firstName, middleName, lastName);
 	}
 	
-	public final void setId(String id) {
-		this.id = (id == null) ? "" : id.trim(); 
+	public final void setId(UUID id) {
+		this.id = (id== null) ? UUID.randomUUID() : id;
 	}
 	
 	public final void setidCard(String idCard) {
@@ -40,7 +42,7 @@ public class PersonDomain {
 		this.lastName = (lastName == null) ? "" : lastName.trim(); 
 	}
 
-	public final String getId() {
+	public final UUID getId() {
 		return id;
 	}
 
@@ -58,6 +60,18 @@ public class PersonDomain {
 
 	public final String getLastName() {
 		return lastName;
+	}
+	
+	public final String getName() {
+		return (getFirstName() + " " + getMiddleName().trim());
+	}
+	//Corregir esto con los surname que faltan
+	public final String getlastName() {
+		return getLastName().trim();
+	}
+	
+	public final String getCompleteName() {
+		return getName() + " " + getlastName();
 	}
 	
 }

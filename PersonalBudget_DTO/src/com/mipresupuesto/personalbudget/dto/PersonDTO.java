@@ -1,8 +1,10 @@
 package com.mipresupuesto.personalbudget.dto;
 
+import java.util.UUID;
+
 public class PersonDTO {
 
-	private String id;
+	private UUID id;
 	private String idCard;
 	private String firstName;
 	private String middleName;
@@ -13,7 +15,6 @@ public class PersonDTO {
 	private String completeName;
 	
 	public PersonDTO() {
-		setId("");
 		setIdCard("");
 		setFirstName("");
 		setMiddleName("");
@@ -23,9 +24,9 @@ public class PersonDTO {
 		setLastName("");
 		setCompleteName("");
 	}
-	
+	//Desactiva sonarlint esta vuelta cuidado
 	@SuppressWarnings("all")
-	public PersonDTO(String id, String idCard, String firstName, String middleName, String firstSurname,
+	public PersonDTO(UUID id, String idCard, String firstName, String middleName, String firstSurname,
 			String secondSurname, final String name, final String lastName, final String completeName) {
 		this.id = id;
 		this.idCard = idCard;
@@ -86,10 +87,10 @@ public class PersonDTO {
 		return new PersonDTO();
 	}
 	
-	public final String getId() {
+	public final UUID getId() {
 		return id;
 	}
-	public final void setId(String id) {
+	public final void setId(UUID id) {
 		this.id = id;
 	}
 	public final String getIdCard() {
